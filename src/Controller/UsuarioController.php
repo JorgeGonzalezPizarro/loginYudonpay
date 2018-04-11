@@ -17,6 +17,11 @@ class UsuarioController extends Controller
     /**
      * @Route("/usuario", name="usuario")
      */
+
+    /*
+     * Crea el fomulario y recoje los datos
+     * llama a la funcion login para realizar el chequeo
+     * */
     public function index(Request $request)
     {
         $defaultData = array('message' => 'Type your message here');
@@ -50,6 +55,13 @@ class UsuarioController extends Controller
     }
 
 
+
+
+    /*
+     * Realiza el chequeo y devuelve el mensaje y el tipo de mensaje
+     * para cada caso
+     * 
+     * */
     public function login($usuario){
 
         $user =$this->getDoctrine()->getRepository(Usuario::class)->findOneBy(array('user'=>$usuario['usuario']));
