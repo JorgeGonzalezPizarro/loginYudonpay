@@ -1,0 +1,10 @@
+index:
+    path: /
+    defaults: { _controller: 'App\Controller\UsuarioController::index' }
+
+
+login_post:
+    path: /
+    defaults: { _controller: 'App\Controller\UsuarioController::index' }
+    requirements:
+        _method : POST
